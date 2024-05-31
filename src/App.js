@@ -1,23 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+// import GuideMeChatBot from 'guide-me-chat-bot';
+import GuideMeChatBot from './components/GuideMeChatBot';
 
 function App() {
+  const onResponse = (data) => {
+    const result = data.message;
+
+    if (result === "openGoogle") {
+      window.location.replace('https://www.google.com/');
+    }
+
+
+    // console.log('respons received....', data)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div style={{fontSize: 100, paddingTop: 200}}>This Can Be Any Web Site</div>
+      <GuideMeChatBot
+        token={'default'}
+        onResponse={onResponse}
+        server='http://localhost:3000'
+        isAdmin={true}
+      />
     </div>
   );
 }

@@ -1,0 +1,131 @@
+.guide-me-chat-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 10001;
+    margin: 10px;
+    width: 400px;
+    max-width: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.guide-me-chat-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+}
+
+.guide-me-chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.guide-me-message {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+}
+
+.guide-me-message.received {
+    align-self: flex-start;
+}
+
+.guide-me-message.sent {
+    align-self: flex-end;
+}
+
+.guide-me-message-content {
+    padding: 10px 15px;
+    border-radius: 20px;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.guide-me-message.received .guide-me-message-content {
+    background-color: #e6e6e6;
+    color: #333;
+}
+
+.guide-me-message.sent .guide-me-message-content {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.guide-me-message-timestamp {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}
+
+.guide-me-message.received .guide-me-message-timestamp {
+    align-self: flex-start;
+}
+
+.guide-me-message.sent .guide-me-message-timestamp {
+    align-self: flex-end;
+}
+
+.guide-me-chat-input {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.guide-me-chat-input input, .guide-me-chat-container input{
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-right: 10px;
+    outline: none;
+}
+
+.guide-me-chat-container textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    width: '100%';
+    margin-top: 10px;
+}
+
+.guide-me-chat-input button, .guide-me-chat-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    outline: none;
+    
+}
+
+.guide-me-chat-input button:hover {
+    background-color: #0056b3;
+}
+
+.fade-in {
+    animation: fadeIn 0.4s ease-in;
+    opacity: 1;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
